@@ -50,7 +50,6 @@ function UX({projects, hobby, reviews}: {projects: Projects, hobby:Projects, rev
     const [project, setProject] = useState<boolean>(false)
     const [review, setReview] = useState<string>("")
     const [hobbys, setHobby] = useState<boolean>(false)
-    
     const projectRef = useRef<HTMLDivElement>(null);
     const hobbyRef = useRef<HTMLDivElement>(null);
     const plugin = useRef(
@@ -194,9 +193,7 @@ function UX({projects, hobby, reviews}: {projects: Projects, hobby:Projects, rev
     </header>
     <div className="w-full gap-2 grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2">
         
-        <div onClick={() => {
-            setProject(true)
-            }} className="w-full h-auto p-2 bg-white rounded-lg relatve">
+        <div  className="w-full h-auto p-2 bg-white rounded-lg relatve">
         
             <div  className="w-full h-full p-2 bg-card roundd-lg relative">
             <button className="absolute p-1 z-50 top-1 left-1 bg-white rounded-md w-fit flex flex-nowrap text-xs flex-row">
@@ -205,7 +202,12 @@ function UX({projects, hobby, reviews}: {projects: Projects, hobby:Projects, rev
             <div className="pt-6">
                 {projects && projects.map((p:Project, i:number) => (
                     i > projects.length-5 ? (
-                        <div key={i} className="flex w-full gap-x-3 relative group rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
+                        <div key={i} 
+                        onClick={() => {
+            setProject(true)
+            setId(p._id)
+            }}
+                        className="flex w-full gap-x-3 relative group rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
                         
                         <div className="relative last:after:hidden after:absolute after:top-0 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-text dark:after:bg-neutral-700 dark:group-hover:after:bg-neutral-600">
                           <div className="relative z-10 size-7 flex justify-center items-center">
@@ -316,9 +318,7 @@ function UX({projects, hobby, reviews}: {projects: Projects, hobby:Projects, rev
         </div>
         </div>
 
-        <div  onClick={() => {
-            setHobby(true)
-            }} className="w-full h-auto p-2 bg-white rounded-lg">
+        <div   className="w-full h-auto p-2 bg-white rounded-lg">
             <div className="w-full h-full p-2 bg-card  rounded-lg relative">
             <button className="absolute p-1 z-50 top-1 left-1 bg-white rounded-md w-fit flex flex-nowrap text-xs flex-row">
                 {obsah.main.myHobby}
@@ -326,7 +326,10 @@ function UX({projects, hobby, reviews}: {projects: Projects, hobby:Projects, rev
             <div className="pt-6">
                 {hobby && hobby.map((p:Project, i:number) => (
                     i > hobby.length-4 ? (
-                        <div key={i} className="flex gap-x-3 relative group rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
+                        <div onClick={() => {
+            setHobby(true)
+            setId(p._id)
+            }} key={i} className="flex gap-x-3 relative group rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
                         <a className="z-1 absolute inset-0" href="#"></a>
                         <div className="relative last:after:hidden after:absolute after:top-0 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-text dark:after:bg-neutral-700 dark:group-hover:after:bg-neutral-600">
                           <div className="relative z-10 size-7 flex justify-center items-center">

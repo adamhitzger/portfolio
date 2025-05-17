@@ -1,7 +1,8 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import * as z from "zod"
-const phoneRegex = new RegExp(/^[0-9]{9}$/)
+
+const phoneRegex = new RegExp(/^((\+420 ?)?\d{3} ?\d{3} ?\d{3}|(\+44 ?7\d{3}|\(?07\d{3}\)?) ?\d{3} ?\d{3})$/)
 export const contact_form_schema = z.object({
     fullname: z.string({
         invalid_type_error: "Špatně zadané jméno/ Invalid name",
@@ -22,7 +23,6 @@ export const contact_form_schema = z.object({
         required_error: "Zel. číslo je povinný / Phone number is required",
     })
     .min(9,{message: "Tel. číslo je krátké / Phone number is too short"})
-    .max(11,{message: "Tel. číslo je kdlouhé / Phone number is too long"})
     .trim()
     .regex(phoneRegex, {message: "Špatný formát tel. číslo / Bad phone number format"}),
     company: z.string().trim().optional(),
@@ -31,7 +31,7 @@ export const contact_form_schema = z.object({
         required_error: "Zpráva je povinná / Message number is required",
     })
     .trim()
-    .min(5, {message: "Zpráva je krátká/ Message is too short"})
+    .min(2, {message: "Zpráva je krátká/ Message is too short"})
     .max(120, {message: "Zpráva je dlouhá / Message is too long"})
 })
 

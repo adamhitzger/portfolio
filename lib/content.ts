@@ -15,7 +15,7 @@ export const content = {
             contact: "Kontaktní formulář:",
             nameHolder: "Zadejte celé jméno",
             emailHolder: "Zadejte e-mail",
-            telHolder: "Zadejte tel. číslo",
+            telHolder: "Tel. číslo - format: 606707808",
             companyHolder: "Zadejte název firmy",
             messageHolder: "Zadejte zprávu",
             send: "Odeslat"
@@ -50,7 +50,7 @@ export const content = {
                 btnText: "Get in touch"
             },
             form: {
-                tel: "Phone: +420 605 859 361",
+                tel: "Phone - format: 606707808",
                 contact: "Contact form:",
                 nameHolder: "Enter fullname",
             emailHolder: "Enter e-mail",
