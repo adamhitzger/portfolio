@@ -52,14 +52,14 @@ export default function TestimonialsSection({ lang, testismonials }: { lang: Lan
                   fill="currentColor"
                 />
               </svg>
-              <p className="text-sm text-foreground leading-relaxed mb-5">
+              <p className="text-base text-foreground leading-relaxed mb-5">
                 {`"${en ? item.review_en :item.review_cz}"`}
               </p>
               <div className="flex items-center gap-3">
                
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{item.client}</p>
-                  <p className="text-[11px] text-muted-foreground">{item.company}</p>
+                  <p className="text-xl font-bold text-foreground">{item.client}</p>
+                  <p className="text-[15px] text-muted-foreground">{item.company}</p>
                 </div>
               </div>
             </div>

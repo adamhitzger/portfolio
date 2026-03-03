@@ -55,7 +55,7 @@ export default function ProjectsSection({ lang, projekty }: { lang: Lang, projek
               <div className="flex items-start justify-between mb-3">
                 <div>
                   
-                  <h3 className="text-base font-semibold text-foreground mt-0.5">{en ? project.title_en :project.title_cz}</h3>
+                  <h3 className="text-xl font-bold text-foreground mt-0.5">{en ? project.title_en :project.title_cz}</h3>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-mono text-muted-foreground">{project.year}</span>
