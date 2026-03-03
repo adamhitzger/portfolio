@@ -302,8 +302,8 @@ const translations = {
       cs: "Máte konkrétní projekt? Pojďme se bavit o detailech.",
     },
     subtitle: {
-      en: "I take on freelance web development and industrial automation projects.",
-      cs: "Přijímám freelance zakázky na webový vývoj a průmyslovou automatizaci.",
+      en: "I take on web & app development and industrial automation projects.",
+      cs: "Přijímám zakázky na vývoj webovek a aplikací i průmyslovou automatizaci.",
     },
     cta: { en: "Send Email", cs: "Poslat email" },
     footer: { en: "Built with Next.js, Three.js & Tailwind CSS", cs: "Vytvořeno pomocí Next.js, Three.js a Tailwind CSS" },
