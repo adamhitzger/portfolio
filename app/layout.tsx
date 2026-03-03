@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Spline_Sans_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from 'next/font/google'
 import {Toaster} from "react-hot-toast"
 import "./globals.css";
-
-const splineMono = Spline_Sans_Mono({
-  variable: "--spline-sans-mono",
-  subsets: ["latin"],
-});
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+const _geist = Geist({ subsets: ["latin"] });
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   icons: {
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
   generator: "Next.ts",
   title: "Adam Hitzger",
   description: "Jmenuji se Adam Hitzger. Zabývám se vývojem webových stránek a aplikací.",
-  authors: [{name: "Adam Hitzger"}, {name: "Petr Krajcigr"}],
+  authors: [{name: "Adam Hitzger"}],
   keywords: [
     "web",
     "webové stránky",
@@ -53,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${splineMono.variable} ${splineMono.variable} flex flex-col min-h-screen w-full items-center antialiased`}
+        className={` font-sans antialiased overflow-x-hidden`}
       >
         {children}
         <Toaster/>
