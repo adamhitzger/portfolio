@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from 'next/font/google'
 import {Toaster} from "react-hot-toast"
 import "./globals.css";
+import {GoogleAnalytics} from "@next/third-parties/google"
 const BASE_URL = "https://adamhitzger.com"
 
 // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
@@ -138,6 +139,7 @@ export default function RootLayout({
       <body
         className={`font-sans antialiased overflow-x-hidden`}
       >
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4 as string}/>
         {children}
         <Toaster/>
       </body>
